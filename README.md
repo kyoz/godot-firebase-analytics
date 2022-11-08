@@ -17,6 +17,34 @@ You should put `google-services.json` into `android/build` folder.
 
 The `google-services.json` you could download from your firebase console where you manage platforms of your project.
 
+Inside your custom build `build.gradle` (inside `android/build`) add theses:
+
+```
+...
+    dependencies {
+        classpath libraries.androidGradlePlugin
+        classpath libraries.kotlinGradlePlugin
+        classpath 'com.google.gms:google-services:4.3.14'    <=== Add this
+//CHUNK_BUILDSCRIPT_DEPENDENCIES_BEGIN
+//CHUNK_BUILDSCRIPT_DEPENDENCIES_END
+    }
+
+...
+
+
+//CHUNK_DEPENDENCIES_BEGIN
+//CHUNK_DEPENDENCIES_END
+}
+
+apply plugin: 'com.google.gms.google-services'    <=== And this
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+...
+```
+
+
 # Usage
 
 The plugin's script will be automatically added to your autoloading list. So you will get global object `fba` with methods described below.

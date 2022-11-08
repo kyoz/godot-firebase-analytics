@@ -20,12 +20,12 @@ allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.1"
+    compileSdkVersion 32
+    buildToolsVersion "32.0.0"
 
     defaultConfig {
-        minSdkVersion 18
-        targetSdkVersion 29
+        minSdkVersion 19
+        targetSdkVersion 32
         versionCode 1
         versionName "1.0"
     }
@@ -49,7 +49,8 @@ dependencies {
      library when building the final binary.
      */
     compileOnly fileTree(dir: 'libs', include: ['godot-lib*.aar'])
-    implementation 'com.google.firebase:firebase-analytics:17.5.0'
+    implementation 'io.github.m4gr3d:godot:3.5.1.stable'
+    implementation 'com.google.firebase:firebase-analytics:20.1.2'
 }
 
 group = 'ru.mobilap.godot'
@@ -99,3 +100,4 @@ afterEvaluate {
         }
     }
 }
+
